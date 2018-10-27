@@ -66,7 +66,7 @@ void writeFirstLineOfKW(short Ipb) //write first line, position of KAREL, KW dim
     int Y=Height, X=1;
     bool semaphore = false;
 
-    char directions[] = {'>','^','<','v'};
+    char directions[] = {'E','N','W','S'};
 
 
     for(i=0; i<ARRAY_SIZE_I; i++)
@@ -75,7 +75,8 @@ void writeFirstLineOfKW(short Ipb) //write first line, position of KAREL, KW dim
         {
             if(checkChar(map[i][j]) > -1)
             {
-                fprintf(fw, "%d %d %d %d %c %hi\n\n", Width, Height, X, Y, directions[checkChar(map[i][j])-1], Ipb);
+                if(checkChar(map[i][j]) > 0 && checkChar(map[i][j]) != 9)
+                    fprintf(fw, "%d %d %d %d %c %hi\n\n", Width, Height, X, Y, directions[checkChar(map[i][j])-1], Ipb);
 
                 X++;
                 semaphore = true;
