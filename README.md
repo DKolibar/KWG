@@ -28,8 +28,6 @@ or drop INPUT FILE directly on executable file.
 
 - Format (.txt, .lol, ...) is not important. The file is passed to program as parameter. 
 
-- #### It is important to dont have any new line after last word "AVE.": ![copy](https://i.imgur.com/oCgHpPi.png)
-
 ---
 
 #### PARAMETERS
