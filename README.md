@@ -24,7 +24,10 @@ or drop INPUT FILE directly on executable file.
 ---
 
 ## HOW TO USE IT?
-- To get valid results from generator you have to prepare VALID INPUT FILE. It is actually very easy proccess. You just copy the content of PROGRAM MAP but you only map part. You ignore first two lines with coordinates etc. I think with picture you will better understand it:![copy](https://i.imgur.com/8hsPq67.png) Format (.txt, .lol, ...) is not important. The file is passed to program as parameter. 
+- To get valid results from generator you have to prepare VALID INPUT FILE. It is actually very easy proccess. You just copy the content of PROGRAM MAP but you only map part. You ignore first two lines with coordinates etc. I think with picture you will better understand it:![copy](https://i.imgur.com/8hsPq67.png)
+
+Format (.txt, .lol, ...) is not important. The file is passed to program as parameter. 
+
 ### It is important to dont have any new line after last word "AVE.": ![copy](https://i.imgur.com/oCgHpPi.png)
 
 ---
