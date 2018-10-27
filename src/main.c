@@ -316,10 +316,18 @@ void cleanMap()
         }
         else if(feof(fr)) //on EOF remove last two lines from array
         {
+            //if there is empty line at the end, remove it!
+            if(map[i-2][0]=='-')
+            {
+                for(j2=0;j2<ARRAY_SIZE_J;j2++)
+                    map[i-2][j2]=EMPTY_CHAR;
+            }
+
             for(j2=0;j2<ARRAY_SIZE_J;j2++)
             {
                 map[i][j2] = EMPTY_CHAR;
                 map[i-1][j2]=EMPTY_CHAR;
+
             }
             break;
         }
