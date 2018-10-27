@@ -28,7 +28,7 @@ or drag n drop INPUT FILE directly on executable file.
 
 - Format (.txt, .lol, ...) is not important. The file is passed to program as parameter.
 
-- After launch, program will ask you, for STARTING AMOUNT of beepers in Karel bag. Enter amount and press Enter!
+- After launch, program will ask you for STARTING AMOUNT of beepers in Karel bag. Enter amount and press Enter!
 
 - After sucessfull execution program will generate <INPUT_FILE>.kw in directory of executable.
 
