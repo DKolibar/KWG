@@ -1,3 +1,7 @@
+/***
+    KWG - KAREL WORLD GENERATOR - By Daniel Kolibár | dkolibar@gmail.com
+ ***/
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
