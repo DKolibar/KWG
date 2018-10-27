@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
     {
         printf("Press any key to exit!\n");
         getchar();
+        getchar();
     }
 
     return 0;
