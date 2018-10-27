@@ -11,7 +11,7 @@ gcc src/main.c -std=c11 -Wall -Werror -o kwg
 ``` 
 and run it:
 ```console 
-./kwg < INPUT_FILE_PATH
+./kwg INPUT_FILE_PATH
 ``` 
 ---
 
@@ -28,13 +28,21 @@ or drop INPUT FILE directly on executable file.
 
 Format (.txt, .lol, ...) is not important. The file is passed to program as parameter. 
 
-### It is important to dont have any new line after last word "AVE.": ![copy](https://i.imgur.com/oCgHpPi.png)
+#### It is important to dont have any new line after last word "AVE.": ![copy](https://i.imgur.com/oCgHpPi.png)
 
 ---
 
+#### PARAMETERS
+```console
+Usage: KWG path_to_map_text_file [-D]
+
+Options:
+   
+   -D      Show debug info
+```
+
+---
+
+*By Daniel Kolibár | dkolibar@gmail.com*
+
 *Karel the Robot: [GIT](https://git.kpi.fei.tuke.sk/kpi/karel-the-robot) | Created by miroslav.binas@tuke.sk (c)2010, 2016*
-
-
-
-
-
