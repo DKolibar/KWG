@@ -4,8 +4,8 @@ I created this program as coding "exercise".
 Program generates Karel world from text structure inside of *input file*.
 
 ![badge](https://img.shields.io/badge/-TUKE-red.svg)
-![badge](https://img.shields.io/badge/testen_on:-UNIX-orange.svg)
-![badge](https://img.shields.io/badge/testen_on:-Windows-blue.svg)
+![badge](https://img.shields.io/badge/tested_on:-UNIX-orange.svg)
+![badge](https://img.shields.io/badge/tested_on:-Windows-blue.svg)
 
 ---
 
