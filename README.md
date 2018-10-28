@@ -42,15 +42,12 @@ KWG path_to_map_text_file beepers_amount_at_start
 
  - After sucessfull execution program will prints out **"Done."** and generate **<input_file>.kw** in directory.
 
- - #####Note: If there is map with amount of placed beepers over 99, generator won't work! Yet...
+ - ####Note: If there is map with amount of placed beepers over 99, generator won't work! Yet...
 
 ---
 
-#### Flags:
-```console
-Usage: KWG path_to_map_text_file beepers_amount_at_start [-D]
-Options:
-   
+####Flags:
+```console   
    -D      Show debug info
 ```
 
