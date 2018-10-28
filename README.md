@@ -32,7 +32,7 @@ or drag n drop INPUT FILE directly on executable file.
 
 - After sucessfull execution program will generate <INPUT_FILE>.kw in directory of executable.
 
-- #### If there is map with over 99 amount of beepers PROGRAM WONT WORK!
+- #### If there is map with amount of beepers higher than 99: PROGRAM WON'T WORK!
 
 ---
 
