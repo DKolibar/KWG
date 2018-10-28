@@ -9,7 +9,7 @@ Program generates Karel world from text structure inside of *input file*.
 
 ---
 
-[![badge](https://img.shields.io/badge/latest%20release:-CLICK_HERE!-brightgreen.svg?logo=appveyor&longCache=true&style=for-the-badge)](https://github.com/DKolibar/KWG/releases)
+[![badge](https://img.shields.io/badge/-CLICK_HERE_TO_DOWNLOAD!-brightgreen.svg?logo=appveyor&longCache=true&style=for-the-badge)](https://github.com/DKolibar/KWG/releases)
 [![GitHub All Releases](https://img.shields.io/github/downloads/DKolibar/KWG/total.svg?logo=appveyor&longCache=true&style=for-the-badge)](https://github.com/DKolibar/KWG/releases)
 
 ---
