@@ -38,6 +38,8 @@ KWG path_to_map_text_file beepers_amount_at_start
  
  *Tip for Vim*: When pasting to Vim you should toggle `:set paste!` first. Otherwise Vim will do indentation to the pasted text.
 
+ - Make sure you **remove all empty lines** (your input file ends with "...AVE.")
+
  - Type of file (.txt, ...) is **not important**. The file is passed to program as parameter.
 
  - After sucessfull execution program will prints out **"Done."** and generate **<input_file>.kw** in directory.
