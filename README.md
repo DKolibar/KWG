@@ -16,7 +16,7 @@ Program generates Karel world from text structure inside of *input file*.
 
 ## TUTORIAL:
 
-###- Running:
+### - Running:
 
 On *UNIX* run with:
 ```console
@@ -28,7 +28,7 @@ On *Windows* run **THROUGH COMMAND LINE** with:
 KWG path_to_map_text_file beepers_amount_at_start
 ```
 
-###- Preparing map for generator:
+### - Preparing map for generator:
  
  - To get valid result from generator you have to prepare **VALID input file**. But don't worry it is actually very easy process.
   
@@ -42,11 +42,11 @@ KWG path_to_map_text_file beepers_amount_at_start
 
  - After sucessfull execution program will prints out **"Done."** and generate **<input_file>.kw** in directory.
 
- - ####Note: If there is map with amount of placed beepers over 99, generator won't work! Yet...
+ - ##### Note: If there is map with amount of placed beepers over 99, generator won't work! Yet...
 
 ---
 
-####Flags:
+#### Flags:
 ```console   
    -D      Show debug info
 ```
