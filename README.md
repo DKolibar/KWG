@@ -1,45 +1,54 @@
 # KWG - KAREL WORLD GENERATOR
 
 I created this program as coding "exercise".
-Program generates Karel world from text structure inside INPUT file.
+Program generates Karel world from text structure inside of *input file*.
+
+![badge](https://img.shields.io/badge/-TUKE-red.svg)
+![badge](https://img.shields.io/badge/testen_on:-UNIX-orange.svg)
+![badge](https://img.shields.io/badge/testen_on:-Windows-blue.svg)
+
+
+
+[![badge](https://img.shields.io/badge/latest%20release:-CLICK_HERE!-brightgreen.svg?logo=appveyor&longCache=true&style=for-the-badge)](https://github.com/DKolibar/KWG/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/DKolibar/KWG/total.svg?logo=appveyor&longCache=true&style=for-the-badge)](https://github.com/DKolibar/KWG/releases)
 
 ---
 
-- On *UNIX* compile with 
-```console 
-gcc src/main.c -std=c11 -Wall -Werror -o kwg 
-``` 
-and run it:
-```console 
-./kwg INPUT_FILE_PATH
-``` 
----
+## TUTORIAL:
 
-- On *Windows* download executable from [EXE directory](https://github.com/DKolibar/KWG/tree/master/EXE) by clicking on "Open Raw" and run it through command line:
-```console  
-kwg INPUT_FILE_PATH
-```
-or drag n drop INPUT FILE directly on executable file.
+###- Running:
 
----
-
-## HOW TO USE IT?
-- To get valid results from generator you have to prepare VALID INPUT FILE. It is actually very easy proccess. You just copy the content of PROGRAM MAP but you only map part. You ignore first two lines with coordinates etc. I think with picture you will better understand it:![copy](https://i.imgur.com/8hsPq67.png)
-
-- Format (.txt, .lol, ...) is not important. The file is passed to program as parameter.
-
-- After launch, program will ask you, for STARTING AMOUNT of beepers in Karel bag. Enter amount and press Enter!
-
-- After sucessfull execution program will generate <INPUT_FILE>.kw in directory of executable.
-
-- #### If there is map with over 99 amount of beepers PROGRAM WONT WORK!
-
----
-
-#### PARAMETERS
+On *UNIX* run with:
 ```console
-Usage: KWG path_to_map_text_file [-D]
+./kwg path_to_map_text_file beepers_amount_at_start
+```
 
+On *Windows* run **THROUGH COMMAND LINE** with:
+```console
+KWG path_to_map_text_file beepers_amount_at_start
+```
+
+###- Preparing map for generator:
+ 
+ - To get valid result from generator you have to prepare **VALID input file**. But don't worry it is actually very easy process.
+  
+ - You just have to copy the **map from Karel output** to your favourite editor (Notepad, Vim) and **ignore first two lines** with coordinates etc.
+ 
+ Example with Vim:![copy](https://i.imgur.com/pZuaLMc.png)
+ 
+ *Tip for Vim*: When pasting to Vim you should toggle `:set paste!` first. Otherwise Vim will do indentation to the pasted text.
+
+ - Type of file (.txt, ...) is **not important**. The file is passed to program as parameter.
+
+ - After sucessfull execution program will prints out **"Done."** and generate **<input_file>.kw** in directory.
+
+ - #####Note: If there is map with amount of placed beepers over 99, generator won't work! Yet...
+
+---
+
+#### Flags:
+```console
+Usage: KWG path_to_map_text_file beepers_amount_at_start [-D]
 Options:
    
    -D      Show debug info

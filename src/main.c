@@ -14,15 +14,16 @@
 
 int checkChar(char Ich);
 void getDimensions();
-short start(int Iargc, char *Iargv[]);
+int start(int Iargc, char *Iargv[]);
+void info();
 void resetArray();
 void getFilesReady(char *Iargv[]);
 void cleanMap();
 void skip();
-void writeFirstLineOfKW(short Ipb);
+void writeFirstLineOfKW(int Ipb);
 void writeRestOfKW();
 
-FILE *fr= NULL, *fw=NULL;
+FILE *fr= NULL, *fw= NULL;
 char map[ARRAY_SIZE_I][ARRAY_SIZE_J];
 unsigned short Width=0, Height=0;
 bool debug = false;
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
 {
     int i=0,j=0;
 
-    short pb = start(argc, argv); //start procedure + store amount of beepers at start from user
+    int pb = start(argc, argv); //start procedure + store amount of beepers at start from user
     resetArray();
     getFilesReady(argv);
     cleanMap(); //remove unecessary parts chars from map and store map into MAP array
@@ -55,13 +56,14 @@ int main(int argc, char *argv[])
     {
         printf("Press any key to exit!\n");
         getchar();
-        getchar();
     }
+
+    printf("Done.");
 
     return 0;
 }
 
-void writeFirstLineOfKW(short Ipb) //write first line, position of KAREL, KW dimensions and beeper amount from user input
+void writeFirstLineOfKW(int Ipb) //write first line, position of KAREL, KW dimensions and beeper amount from user input
 {
     int i,j;
     int Y=Height, X=1;
@@ -77,7 +79,7 @@ void writeFirstLineOfKW(short Ipb) //write first line, position of KAREL, KW dim
             if(checkChar(map[i][j]) > -1)
             {
                 if(checkChar(map[i][j]) > 0 && checkChar(map[i][j]) != 9)
-                    fprintf(fw, "%d %d %d %d %c %hi\n\n", Width, Height, X, Y, directions[checkChar(map[i][j])-1], Ipb);
+                    fprintf(fw, "%d %d %d %d %c %d\n\n", Width, Height, X, Y, directions[checkChar(map[i][j])-1], Ipb);
 
                 X++;
                 semaphore = true;
@@ -194,34 +196,54 @@ int checkChar(char Ich) //check if actual character (Ich) is valid
     return -1; //returns when Ich is not valid character
 }
 
-short start(int Iargc, char *Iargv[])
+
+
+void info()
 {
-    short n;
+    printf("\nUsage: KWG path_to_map_text_file beepers_amount_at_start [-D]");
+    printf("\nExample: KWG folderA/map1.txt 60\n\n");
+    printf("Options:\n");
+    printf("   -D      Show debug info\n\n");
+    printf("By: Daniel Kolibar | dkolibar@gmail.com\n");
+    exit(EXIT_FAILURE);
+}
+
+int start(int Iargc, char *Iargv[])
+{
+    int n;
 
     //if program is run without any parameters:
-    if(Iargc == 1 || Iargc > 3)
-    {
-        printf("\nUsage: KWG path_to_map_text_file [-D]\n");
-        printf("Options:\n");
-        printf("   -D      Show debug info\n");
-        exit(EXIT_FAILURE);
-    }
+    if(Iargc < 3 || Iargc > 4)
+        info();
 
-    //sets debug to true if -D flag is used
-    if(Iargc == 3 && strcmp(Iargv[2],"-D")==0)
+    //sets debug to true if -D flag is used, if there is invalid flag write info:
+    if(Iargc == 4 && strcmp(Iargv[3],"-D")==0)
         debug = true;
+    else if(Iargc == 4)
+        info();
+
+    //check second parameter (beepers amount)
+    int i=0;
+    while(*(Iargv[2]+i)!='\0') //check whole string until end
+    {
+        //if any of char in string is not number is is INVALID input
+        if(*(Iargv[2]+i) < 48 || *(Iargv[2]+i) > 57)
+        {
+            info();
+            break;
+        }
+
+        i++;
+    }
+    n = atoi(Iargv[2]);   // NOLINT(cert-err34-c)
 
     //prints basic info:
     if(debug)
     {
         printf("arg. N: %d\n", Iargc-1); //argument count
         printf("path: %s\n", Iargv[1]); //path of input file
+        printf("beepers amount: %d\n", n); //beepers amount
     }
-
-    printf("ENTER AMOUNT OF BEEPERS, THAT KAREL HAS AT THE START IN HIS BACKPACK\n(0-32000) >>> ");
-    scanf("%hi", &n);
-    if(n < 0 || n > 32000)
-        exit(EXIT_FAILURE);
 
     return n;
 }
@@ -281,7 +303,19 @@ void getFilesReady(char *Iargv[])
         printf("result file name: %s\n", f);
 
     fr = fopen(Iargv[1], "r"); //pointer to input file
+
+    if(fr==NULL)
+    {
+        printf("Error opening input file :(");
+        exit(EXIT_FAILURE);
+    }
+
     fw = fopen(f, "w"); //pointer to output file with f name
+    if(fw==NULL)
+    {
+        printf("Can't write output file :(");
+        exit(EXIT_FAILURE);
+    }
 }
 
 void skip() //skip for every four chars in every line of map
